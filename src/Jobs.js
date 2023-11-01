@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import './Jobs.css';
 import SearchForm from './SearchForm';
 import JobCard from './JobCard';
@@ -36,7 +37,7 @@ const Jobs = ({ user, apply }) => {
             return (
                 <div>
                     {array.map(({id, title, salary, equity, companyName}) => {
-                        return <JobCard id={id} title={title} salary={salary} equity={equity} company={companyName} user={user} apply={apply} />
+                        return <JobCard id={id} title={title} salary={salary} equity={equity} company={companyName} user={user} apply={apply} key={uuidv4()}/>
                     })}
                 </div>
             )

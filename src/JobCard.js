@@ -21,7 +21,7 @@ const JobCard = ({ id, title, salary, equity, company=null, user, apply}) => {
      */
 
     const applyButton = (id, user) => {
-        for(let job of user.jobs){
+        for(let job of user.applications){
             if(job.id === id){
                 return (
                     <button>Applied</button>
@@ -29,7 +29,7 @@ const JobCard = ({ id, title, salary, equity, company=null, user, apply}) => {
             }
         };
         return (
-            <button onClick={handleApply(user.username, id)}>Apply</button>
+            <button onClick={() => handleApply(user.username, id)}>Apply</button>
         );
     };
 

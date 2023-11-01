@@ -74,10 +74,8 @@ class JoblyApi {
   /** Log in an existing user */
 
   static async loginUser(formData) {
-    console.log(formData);
     let res = await this.request('auth/token', formData, 'post');
     JoblyApi.token = res.token;
-    console.log(res.token);
     return res.token;
   }
 

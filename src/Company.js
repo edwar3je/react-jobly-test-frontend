@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import JoblyApi from './api';
 import JobCard from './JobCard';
 import './Company.css';
@@ -36,7 +37,8 @@ const Company = ({ user, apply }) => {
      */
 
     const getJobsByCompany = async () => {
-        const res = JoblyApi.getCompany(handle);
+        const res = await JoblyApi.getCompany(handle);
+        console.log(res.jobs);
         return res.jobs;
     };
 
@@ -47,9 +49,13 @@ const Company = ({ user, apply }) => {
 
     const loadJobsByCompany = (array) => {
         if(array.length !== 0){
-            return array.map(({ id, title, salary, equity }) => {
-                <JobCard id={id} title={title} salary={salary} equity={equity} user={user} apply={apply} />
-            })
+            return (
+                <Fragment>
+                    {array.map(({ id, title, salary, equity }) => {
+                        return <JobCard id={id} title={title} salary={salary} equity={equity} user={user} apply={apply} key={uuidv4()}/>
+                    })}
+                </Fragment>
+            )
         } else {
             return (
                 <p>It looks like the company either doesn't exist or currently doesn't have any jobs available.</p>
@@ -72,6 +78,8 @@ const Company = ({ user, apply }) => {
             </div>
         );
     }
+
+    console.log(companyJobs);
    
     return (
         <div className="company-job-cards-container">
