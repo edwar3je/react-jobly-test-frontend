@@ -34,7 +34,9 @@ const Profile = ({ user, updateUser }) => {
         navigate('/');
     }
 
-    if(!localStorage.getItem('currentUser')){
+    // Change to localStorage.getItem('currentUserInfo') or make it an "OR" conditional
+
+    if(!localStorage.getItem('currentUser') || !localStorage.getItem('currentUserInfo')){
         return navigate('/');
     };
 

@@ -59,7 +59,9 @@ const Company = ({ user, apply }) => {
 
     /** If the user isn't logged in, the user will be redirected back to the home page. */
 
-    if(!localStorage.getItem('currentUser')){
+    // Change to localStorage.getItem('currentUserInfo') or make it an "OR" conditional
+
+    if(!localStorage.getItem('currentUser') || !localStorage.getItem('currentUserInfo')){
         return navigate('/');
     }
 
