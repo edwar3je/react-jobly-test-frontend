@@ -65,7 +65,7 @@ const Jobs = ({ user, apply }) => {
 
     return (
         <div>
-            <SearchForm lookup={lookupJobs} />
+            <SearchForm type="job" lookup={lookupJobs} />
             {loadJobs(jobs)}
         </div>
     );

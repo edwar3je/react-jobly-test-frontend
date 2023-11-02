@@ -38,7 +38,6 @@ const Company = ({ user, apply }) => {
 
     const getJobsByCompany = async () => {
         const res = await JoblyApi.getCompany(handle);
-        console.log(res.jobs);
         return res.jobs;
     };
 

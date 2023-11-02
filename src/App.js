@@ -99,7 +99,6 @@ function App() {
   const updateJob = async (username, jobId) => {
     await JoblyApi.applyForJob(username, jobId);
     // Use currentUserInfo instead of currentUser
-    await JoblyApi.getUserInfo(currentUser);
     const updatedUser = await JoblyApi.getUserInfo(currentUser);
     setCurrentUserInfo(updatedUser.user);
     localStorage.setItem('currentUserInfo', JSON.stringify(updatedUser.user));

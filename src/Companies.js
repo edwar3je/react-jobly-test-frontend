@@ -83,7 +83,7 @@ const Companies = () => {
 
     return (
         <div>
-            <SearchForm lookup={lookupCompanies} />
+            <SearchForm type="company" lookup={lookupCompanies} />
             {loadCompanies(companies)}
         </div>
     );

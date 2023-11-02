@@ -53,7 +53,7 @@ class JoblyApi {
   /** Get companies using filter */
 
   static async getCompaniesFilter(string) {
-    let res = await this.request(`companies?nameLike=${string}`);
+    let res = await this.request(`companies?name=${string}`);
     return res.companies;
   }
 
@@ -116,7 +116,7 @@ class JoblyApi {
   /** Allows user to apply for a job */
 
   static async applyForJob(username, jobId) {
-    let res = await this.request(`users/${username}/jobs/${jobId}`);
+    let res = await this.request(`users/${username}/jobs/${jobId}`, {}, 'post');
     return res;
   }
 }

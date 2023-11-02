@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchForm.css';
 
-const SearchForm = ({ lookup }) => {
+const SearchForm = ({ type, lookup }) => {
     
     const initialState = {
         name: ""
@@ -25,7 +25,7 @@ const SearchForm = ({ lookup }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Enter company name" value={formData.name} onChange={handleChange}></input>
+            <input type="text" name="name" placeholder={`Enter ${type} name`} value={formData.name} onChange={handleChange}></input>
             <button>Submit</button>
         </form>
     );

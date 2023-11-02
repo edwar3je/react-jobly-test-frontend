@@ -17,7 +17,12 @@ const Profile = ({ user, updateUser }) => {
      */
 
     useEffect(() => {
-        setFormData(user);
+        setFormData({
+            username: user.username,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email
+        });
         setIsLoading(false);
     }, [user]);
 
@@ -30,7 +35,12 @@ const Profile = ({ user, updateUser }) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        await updateUser(formData);
+        const submitObject = {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email
+        }
+        await updateUser(submitObject);
         navigate('/');
     }
 
@@ -52,11 +62,13 @@ const Profile = ({ user, updateUser }) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" value={user.username}></input>
+                <input type="text" id="username" name="username" value={formData.username} readOnly></input>
                 <label htmlFor="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange}></input>
                 <label htmlFor="lastName">Last Name</label>
                 <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange}></input>
+                <label htmlFor="email">Email Address</label>
+                <input type="text" id="email" name="email" value={formData.email} onChange={handleChange}></input>
                 <button>Save Changes</button>
             </form>
         </div>
