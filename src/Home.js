@@ -14,24 +14,24 @@ const Home = ({ user }) => {
     const loadOnUser = () => {
         if(!user){
             return (
-                <div>
-                    <button>
-                        <Link exact="true" to="/sign-up">Sign up</Link>
+                <div className="home-button-container">
+                    <button className="home-buttons">
+                        <Link className="home-buttons-text" exact="true" to="/sign-up">Sign up</Link>
                     </button>
-                    <button>
-                        <Link exact="true" to="/login">Log in</Link>
+                    <button className="home-buttons">
+                        <Link className="home-buttons-text" exact="true" to="/login">Log in</Link>
                     </button>
                 </div>
             );    
         }
         return (
-            <h3>Welcome Back, {user.firstName}!</h3>
+            <h3 className="home-welcome">Welcome Back, {user.firstName}!</h3>
         );
     };
 
     return (
-        <div>
-            <h2>Jobly</h2>
+        <div className="home-container">
+            <h2 className="home-title">Jobly</h2>
             {loadOnUser()}
         </div>
     );

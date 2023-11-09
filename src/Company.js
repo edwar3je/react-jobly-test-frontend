@@ -77,8 +77,6 @@ const Company = ({ user, apply }) => {
             </div>
         );
     }
-
-    console.log(companyJobs);
    
     return (
         <div className="company-job-cards-container">

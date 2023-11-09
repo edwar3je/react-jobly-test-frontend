@@ -26,22 +26,30 @@ const NavBar = ({ user, signOut }) => {
     if(!user){
         return (
             <div>
-                <nav>
-                    <NavLink exact="true" to="/">Jobly</NavLink>
-                    <NavLink exact="true" to="/sign-up">Signup</NavLink>
-                    <NavLink exact="true" to="/login">Login</NavLink>
+                <nav className="nav-container">
+                    <div className="nav-left-container">
+                        <NavLink className="nav-home" exact="true" to="/">Jobly</NavLink>
+                    </div>
+                    <div className="nav-right-container">
+                        <NavLink className="nav-sign-up" exact="true" to="/sign-up">Signup</NavLink>
+                        <NavLink className="nav-login" exact="true" to="/login">Login</NavLink>
+                    </div>
                 </nav>
             </div>
         );
     } else {
         return (
             <div>
-                <nav>
-                    <NavLink exact="true" to="/">Jobly</NavLink>
-                    <NavLink exact="true" to="/companies">Companies</NavLink>
-                    <NavLink exact="true" to="/jobs">Jobs</NavLink>
-                    <NavLink exact="true" to="/profile">Profile</NavLink>
-                    <button onClick={signOutFull}>Sign Out {user}</button>
+                <nav className="nav-container">
+                    <div className="nav-left-container">
+                        <NavLink className="nav-home" exact="true" to="/">Jobly</NavLink>
+                    </div>
+                    <div className="nav-right-container">
+                        <NavLink className="nav-companies" exact="true" to="/companies">Companies</NavLink>
+                        <NavLink className="nav-jobs" exact="true" to="/jobs">Jobs</NavLink>
+                        <NavLink className="nav-profile" exact="true" to="/profile">Profile</NavLink>
+                        <button className="nav-sign-out" onClick={signOutFull}>Sign Out {user}</button>
+                    </div>
                 </nav>
             </div>
         );

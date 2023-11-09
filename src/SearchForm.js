@@ -24,9 +24,9 @@ const SearchForm = ({ type, lookup }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder={`Enter ${type} name`} value={formData.name} onChange={handleChange}></input>
-            <button>Submit</button>
+        <form className="search-form-container" onSubmit={handleSubmit}>
+            <input className="search-form-input" type="text" name="name" placeholder={`Enter ${type} name`} value={formData.name} onChange={handleChange}></input>
+            <button className="search-form-submit">Submit</button>
         </form>
     );
 }

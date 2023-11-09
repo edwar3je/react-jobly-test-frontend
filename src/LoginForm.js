@@ -35,15 +35,19 @@ const LoginForm = ({ logIn }) => {
     }
 
     return (
-        <div>
-            <h2>Log In</h2>
+        <div className="log-in-general-container">
+            <h2 className="log-in-title">Log In</h2>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name="username" value={formData.name} id="username" onChange={handleChange}></input>
-                    <label htmlFor="password">Password</label>
-                    <input type="text" name="password" value={formData.password} id="password" onChange={handleChange}></input>
-                    <button>Submit</button>
+                <form className="log-in-input-container" onSubmit={handleSubmit}>
+                    <div className="log-in-username">
+                        <label className="log-in-label" htmlFor="username">Username</label>
+                        <input type="text" className="log-in" name="username" value={formData.name} id="username" onChange={handleChange}></input>
+                    </div>
+                    <div className="log-in-password">
+                        <label className="log-in-label" htmlFor="password">Password</label>
+                        <input type="password" className="log-in" name="password" value={formData.password} id="password" onChange={handleChange}></input>
+                    </div>
+                    <button className="log-in-submit">Submit</button>
                 </form>
             </div>
         </div>

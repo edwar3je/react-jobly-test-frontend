@@ -1,6 +1,8 @@
 .company-job-cards-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+    margin-top: 10px;
 }

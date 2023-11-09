@@ -1,0 +1,70 @@
+.sign-up-general-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.sign-up-title {
+    font-size: 40px;
+}
+
+.sign-up-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.sign-up-label {
+    font-size: 20px;
+}
+
+.sign-up-username {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.sign-up-password {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.sign-up-first-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.sign-up-last-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.sign-up-email {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+input.sign-up {
+    height: 30px;
+    width: 250px;
+}
+
+.sign-up-submit {
+    background-color: #5caa3e;
+    color: #062704;
+    font-size: 20px;
+    border-radius: 5px;
+}

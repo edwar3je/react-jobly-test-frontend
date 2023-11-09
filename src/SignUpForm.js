@@ -39,21 +39,31 @@ const SignUpForm = ({ signUp }) => {
     }
     
     return (
-        <div>
-            <h2>Sign Up</h2>
+        <div className="sign-up-general-container">
+            <h2 className="sign-up-title">Sign Up</h2>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" id="username" name="username" value={formData.username} onChange={handleChange}></input>
-                    <label htmlFor="password">Password</label>
-                    <input type="text" id="password" name="password" value={formData.password} onChange={handleChange}></input>
-                    <label htmlFor="firstName">First name</label>
-                    <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange}></input>
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange}></input>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" name="email" value={formData.email} onChange={handleChange}></input>
-                    <button>Submit</button>
+                <form className="sign-up-input-container" onSubmit={handleSubmit}>
+                    <div className="sign-up-username">
+                        <label className="sign-up-label" htmlFor="username">Username</label>
+                        <input type="text" className="sign-up" id="username" name="username" value={formData.username} onChange={handleChange}></input>
+                    </div>
+                    <div className="sign-up-password">
+                        <label className="sign-up-label" htmlFor="password">Password</label>
+                        <input type="password" className="sign-up" id="password" name="password" value={formData.password} onChange={handleChange}></input>
+                    </div>
+                    <div className="sign-up-first-name">
+                        <label className="sign-up-label" htmlFor="firstName">First name</label>
+                        <input type="text" className="sign-up" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange}></input>
+                    </div>
+                    <div className="sign-up-last-name">
+                        <label className="sign-up-label" htmlFor="lastName">Last Name</label>
+                        <input type="text" className="sign-up" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange}></input>
+                    </div>
+                    <div className="sign-up-email">
+                        <label className="sign-up-label" htmlFor="email">Email</label>
+                        <input type="text" className="sign-up" id="email" name="email" value={formData.email} onChange={handleChange}></input>
+                    </div>
+                    <button className="sign-up-submit">Submit</button>
                 </form>
             </div>
         </div>

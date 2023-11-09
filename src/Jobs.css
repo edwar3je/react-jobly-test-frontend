@@ -1,0 +1,13 @@
+.jobs-job-cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+    margin-top: 10px;
+}
+
+.jobs-not-found {
+    font-size: 40px;
+    margin-top: 10px;
+}

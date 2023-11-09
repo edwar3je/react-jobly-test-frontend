@@ -11,8 +11,8 @@ const JobCard = ({ id, title, salary, equity, company=null, user, apply}) => {
 
     /** Applies user for a job and saves information to both the backend and frontend. */
 
-    const handleApply = async (username, jobId) => {
-        await apply(username, jobId);
+    const handleApply = async (username, jobId, jobTitle) => {
+        await apply(username, jobId, jobTitle);
     };
 
     /** Renders either a non-clickable or clickable button depending on whether the user has applied for the job
@@ -24,42 +24,55 @@ const JobCard = ({ id, title, salary, equity, company=null, user, apply}) => {
         for(let job of user.applications){
             if(job === id){
                 return (
-                    <button>Applied</button>
+                    <button className="job-card-applied-button">Applied</button>
                 )
             }
         };
         return (
-            <button onClick={async () => await handleApply(user.username, id)}>Apply</button>
+            <button className="job-card-apply-button" onClick={async () => await handleApply(user.username, id, title)}>Apply</button>
         );
     };
 
     /** If company is null, the company is omitted from the render (otherwise, the company information is rendered). */
     
     if(!company){
+
         return (
             <div className="job-card-container">
-                <div className="job-card-details">
+                <div className="job-card-title-container">
                     <h3 className="job-card-title">{title}</h3>
-                    <p className="job-card-other">Salary: {salary}</p>
-                    <p className="job-card-other">Equity: {equity}</p>
                 </div>
-                <div className="apply-button-container">
-                    {applyButton(id, user)}
+                <div className="job-card-multi-container">
+                    <div className="job-card-details-container">
+                        <ul className="job-card-details-list">
+                            <li className="job-card-salary">Salary: {salary}</li>
+                            <li className="job-card-equity">Equity: {equity}</li>
+                        </ul>
+                    </div>
+                    <div className="job-card-button-container">
+                        {applyButton(id, user)}
+                    </div>
                 </div>
             </div>
         );
     };
-    
+
     return (
         <div className="job-card-container">
-            <div className="job-card-details">
+            <div className="job-card-title-container">
                 <h3 className="job-card-title">{title}</h3>
-                <p className="job-card-company">{company}</p>
-                <p className="job-card-other">Salary: {salary}</p>
-                <p className="job-card-other">Equity: {equity}</p>
             </div>
-            <div className="apply-button-container">
-                {applyButton(id, user)}
+            <div className="job-card-multi-container">
+                <div className="job-card-details-container">
+                    <ul className="job-card-details-list">
+                        <li className="job-card-company">{company}</li>
+                        <li className="job-card-salary">Salary: {salary}</li>
+                        <li className="job-card-equity">Equity: {equity}</li>
+                    </ul>
+                </div>
+                <div className="job-card-button-container">
+                    {applyButton(id, user)}
+                </div>
             </div>
         </div>
     );

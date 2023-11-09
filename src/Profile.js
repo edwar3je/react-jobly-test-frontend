@@ -59,17 +59,26 @@ const Profile = ({ user, updateUser }) => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" value={formData.username} readOnly></input>
-                <label htmlFor="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange}></input>
-                <label htmlFor="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange}></input>
-                <label htmlFor="email">Email Address</label>
-                <input type="text" id="email" name="email" value={formData.email} onChange={handleChange}></input>
-                <button>Save Changes</button>
+        <div className="profile-general-container">
+            <h1 className="notice">Update Profile Information</h1>
+            <form className="profile-form-container" onSubmit={handleSubmit}>
+                <div className="profile-username">
+                    <label className="profile-label" htmlFor="username">Username</label>
+                    <input type="text" className="profile" id="username" name="username" value={formData.username} readOnly></input>
+                </div>
+                <div className="profile-first-name">
+                    <label className="profile-label" htmlFor="firstName">First Name</label>
+                    <input type="text" className="profile" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange}></input>
+                </div>
+                <div className="profile-last-name">
+                    <label className="profile-label" htmlFor="lastName">Last Name</label>
+                    <input type="text" className="profile" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange}></input>
+                </div>
+                <div className="profile-email">
+                    <label className="profile-label" htmlFor="email">Email Address</label>
+                    <input type="text" className="profile" id="email" name="email" value={formData.email} onChange={handleChange}></input>
+                </div>
+                <button className="profile-submit">Save Changes</button>
             </form>
         </div>
     );

@@ -35,7 +35,7 @@ const Jobs = ({ user, apply }) => {
     const loadJobs = (array) => {
         if(array.length !== 0){
             return (
-                <div>
+                <div className="jobs-job-cards-container">
                     {array.map(({id, title, salary, equity, companyName}) => {
                         return <JobCard id={id} title={title} salary={salary} equity={equity} company={companyName} user={user} apply={apply} key={uuidv4()}/>
                     })}
@@ -43,7 +43,7 @@ const Jobs = ({ user, apply }) => {
             )
         } else {
             return (
-                <h3>Oops, no options available. Try another word.</h3>
+                <h3 className="jobs-not-found">Oops, no options available. Try another word.</h3>
             )
         }
     };

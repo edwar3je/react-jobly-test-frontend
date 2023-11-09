@@ -1,37 +1,98 @@
 .job-card-container {
-    height: 200px;
-    width: 1500px;
-    background-color: beige;
-    border-radius: 30px;
+    width: 500px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.job-card-title-container {
+    background-color: #997950;
+    width: 500px;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 2px solid black;
+}
+
+.job-card-title {
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+}
+
+.job-card-multi-container {
+    background-color: white;
+    width: 500px;
+    height: 190px;
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.job-card-details-container {
+    width: 400px;
+    height: 190px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.job-card-details-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.job-card-company {
+    font-size: 20px;
+    font-weight: bold;
+    color: #997950;
+}
+
+.job-card-salary {
+    font-size: 20px;
+    color: #997950;
+}
+
+.job-card-equity {
+    font-size: 20px;
+    color: #997950;
+}
+
+.job-card-button-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100px;
+    height: 190px;
 }
 
-.job-card-details {
-    height: 150px;
-    width: 1300px;
-    background-color: #997950;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
+.job-card-applied-button {
+    background-color: #ff4f4f;
+    color: #820000;
+    pointer-events: none;
+    font-size: 1.25rem;
+    height: 40px;
+    width: 90px;
+    border-radius: 10px;
 }
 
-.job-card-title {
-    font-size: 25px;
-    color: #222021
+.job-card-apply-button {
+    background-color: #5caa3e;
+    color: #062704;
+    font-size: 1.25rem;
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
 }
 
-.job-card-company {
-    font-size: 15px;
-    color: #222021;
-    font-style: italic
-}
-
-.job-card-other {
-    font-size: 15px;
-    color: #222021
+.job-card-apply-button:hover {
+    cursor: pointer;
 }

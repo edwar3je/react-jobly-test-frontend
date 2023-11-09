@@ -1,31 +1,56 @@
 .company-card-container {
-    height: 200px;
-    width: 1500px;
-    background-color: beige;
-    border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 250px;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
-.company-card-details {
-    height: 150px;
-    width: 1300px;
-    background-color: #997950;
-    border-radius: 25px;
+.company-card-title {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #997950;
+    height: 60px;
+    width: 500px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .company-card-name {
-    font-size: 25px;
-    color: #222021
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.company-card-name:hover {
+    text-decoration: underline;
+}
+
+.company-card-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    height: 190px;
+    width: 500px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .company-card-description {
-    font-size: 15px;
-    color: #222021
+    font-size: 20px;
+    color: #997950;
+    text-decoration: none;
+}
+
+.companies-not-found {
+    font-size: 40px;
+    margin-top: 20px;
 }

@@ -1,0 +1,64 @@
+.profile-general-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+h1.notice {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.profile-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.profile-label {
+    font-size: 20px;
+}
+
+.profile-username {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.profile-first-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.profile-last-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.profile-email {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+input.profile {
+    height: 30px;
+    width: 250px;
+}
+
+.profile-submit {
+    background-color: #5caa3e;
+    color: #062704;
+    font-size: 20px;
+    border-radius: 5px;
+}

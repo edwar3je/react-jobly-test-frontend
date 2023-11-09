@@ -89,19 +89,18 @@ function App() {
   const updateUser = async (data) => {
     await JoblyApi.updateUserInfo(data, currentUser);
     const updatedUser = await JoblyApi.getUserInfo(currentUser);
-    // Implement
     setCurrentUserInfo(updatedUser.user);
     localStorage.setItem('currentUserInfo', JSON.stringify(updatedUser.user));
   };
 
   /** A function that allows a user to apply for a job (on the backend) and updates the state of 'currentUser' to reflect change to 'jobs' key. */
 
-  const updateJob = async (username, jobId) => {
+  const updateJob = async (username, jobId, jobTitle) => {
     await JoblyApi.applyForJob(username, jobId);
-    // Use currentUserInfo instead of currentUser
     const updatedUser = await JoblyApi.getUserInfo(currentUser);
     setCurrentUserInfo(updatedUser.user);
     localStorage.setItem('currentUserInfo', JSON.stringify(updatedUser.user));
+    alert(`You just applied for the ${jobTitle} position`);
   };
 
   /** If a change has been made to the 'token' state, and token is truthy, the 'getUserInfo' static method from the JoblyApi class is called and uses the username within 'currentUser'

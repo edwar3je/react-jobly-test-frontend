@@ -1,0 +1,38 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.home-title {
+    font-size: 50px;
+    color: black;
+    margin-top: 250px;
+}
+
+.home-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-buttons {
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: #5caa3e;
+    color: #062704;
+    border: #062704;
+}
+
+.home-buttons-text {
+    text-decoration: none;
+    color: #062704;
+}
+
+.home-welcome {
+    font-size: 40px;
+    color: black;
+}

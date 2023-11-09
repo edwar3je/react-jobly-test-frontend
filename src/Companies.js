@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import './Companies.css';
 import SearchForm from './SearchForm';
 import CompanyCard from './CompanyCard';
@@ -52,15 +53,15 @@ const Companies = () => {
     const loadCompanies = (array) => {
         if(array.length !== 0){
             return (
-                <div>
+                <div className="company-cards-container">
                     {array.map(({ handle, name, description, numEmployees, logoUrl }) => {
-                        return <CompanyCard handle={handle} name={name} description={description} />
+                        return <CompanyCard handle={handle} name={name} description={description} key={uuidv4()}/>
                     })}
                 </div>
             )
         } else {
             return (
-                <h3>Oops, no options available. Try another word.</h3>
+                <h3 className="companies-not-found">Oops, no options available. Try another word.</h3>
             )
         }
     }

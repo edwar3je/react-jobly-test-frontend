@@ -9,17 +9,17 @@ import './CompanyCard.css';
 const CompanyCard = ({ handle, name, description }) => {
     
     const path = `/companies/${handle}`
-    
+
     return (
         <div className="company-card-container">
-            <Link to={path}>
-                <div className="company-card-details">
-                    <h3 className="company-card-name">{name}</h3>
-                    <p className="company-card-description">{description}</p>
-                </div>
-            </Link>
+            <div className="company-card-title">
+                <Link className="company-card-name" to={path}>{name}</Link>
+            </div>
+            <div className="company-card-details">
+                <p className="company-card-description">{description}</p>
+            </div>
         </div>
-    );
+    )
 };
 
 export default CompanyCard;
