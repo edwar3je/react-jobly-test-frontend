@@ -17,7 +17,6 @@ const Profile = ({ user, updateUser }) => {
      */
 
     useEffect(() => {
-        console.log('You reached the effect process')
         if(user){
             setFormData({
                 username: user.username,
