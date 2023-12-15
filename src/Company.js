@@ -24,13 +24,15 @@ const Company = ({ user, apply }) => {
      */
 
     useEffect(() => {
-        const fetchCompanyJobs = async () => {
-            const allCompanyJobs = await getJobsByCompany();
-            setCompanyJobs(allCompanyJobs);
-            setIsLoading(false);
+        if(user){
+            const fetchCompanyJobs = async () => {
+                const allCompanyJobs = await getJobsByCompany();
+                setCompanyJobs(allCompanyJobs);
+                setIsLoading(false);
+            }
+            fetchCompanyJobs().catch(console.error);
         }
-        fetchCompanyJobs().catch(console.error);
-    }, []);
+    }, [user]);
 
     /** A function passed in useEffect that uses the static method 'getCompany(handle)' from the JoblyApi class. The function returns an
      *  array of all available jobs from the company specified by 'handle'. 

@@ -14,13 +14,15 @@ const Jobs = ({ user, apply }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchAllJobs = async () => {
-            const allJobs = await JoblyApi.getAllJobs();
-            setJobs(allJobs);
-            setIsLoading(false);
+        if(user){
+            const fetchAllJobs = async () => {
+                const allJobs = await JoblyApi.getAllJobs();
+                setJobs(allJobs);
+                setIsLoading(false);
+            }
+            fetchAllJobs().catch(console.error); 
         }
-        fetchAllJobs().catch(console.error); 
-    }, []);
+    }, [user]);
 
     const lookupJobs = async (string) => {
         if(string !== ""){
@@ -33,6 +35,7 @@ const Jobs = ({ user, apply }) => {
     }
 
     const loadJobs = (array) => {
+        console.log(array, ">>>>>>>>>>>>");
         if(array.length !== 0){
             return (
                 <div className="jobs-job-cards-container">

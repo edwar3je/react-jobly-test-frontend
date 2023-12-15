@@ -17,13 +17,16 @@ const Profile = ({ user, updateUser }) => {
      */
 
     useEffect(() => {
-        setFormData({
-            username: user.username,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email
-        });
-        setIsLoading(false);
+        console.log('You reached the effect process')
+        if(user){
+            setFormData({
+                username: user.username,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email
+            });
+            setIsLoading(false);
+        }
     }, [user]);
 
     const handleChange = e => {
